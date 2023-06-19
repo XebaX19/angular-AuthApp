@@ -20,7 +20,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  //El "useHash" es utilizado para que todas las rutas inicien desde el index en la raiz del proyecto
+  //(sin esto, es posible que no funcione la app cuando recargo el navegador en alguna ruta en particular, al desplegar el proyecto en Producción
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
